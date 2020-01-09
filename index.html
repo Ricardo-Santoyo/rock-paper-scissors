@@ -6,6 +6,16 @@
 </head>
 <body>
     <script>
+        function computerPlay() {
+            const move = Math.floor(Math.random() * 3);
+            if (move == 0) {
+                return 'rock';
+            } else if (move == 1) {
+                return 'paper';
+            } else if (move == 2) {
+                return 'scissors';
+            }
+        }
     </script>
 </body>
 </html>
