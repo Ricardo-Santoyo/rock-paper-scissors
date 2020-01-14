@@ -1,7 +1,18 @@
+body {
+    background-color: rgb(53, 53, 53);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 #rock {
     width: 250px;
 }
 
 #scissors {
+    width: 250px;
+}
+
+#paper {
     width: 250px;
 }

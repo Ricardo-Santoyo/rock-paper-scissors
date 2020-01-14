@@ -27,37 +27,39 @@ function computerPlay() {
     }
 }
 
+const displayResults = document.querySelector('#displayResults');
+
 function playRound (playerSelection,computerSelection) {
     computerSelection = computerPlay();
 
     if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore++;
-        console.log("You win! Rock beats scissors")
+        displayResults.textContent = "You win! Rock beats scissors";
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore++;
-        console.log("you Lose! Paper beats rock")
+        displayResults.textContent = "You Lose! Paper beats rock";
     } else if (playerSelection == 'rock' && computerSelection == 'rock') {
-        console.log("It's a tie!")
+        displayResults.textContent = "It's a tie!";
     }
 
     if (playerSelection == 'paper' && computerSelection == 'rock') {
         playerScore++;
-        console.log("You win! Paper beats rock")
+        displayResults.textContent = "You win! Paper beats rock";
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         computerScore++;
-        console.log("you Lose! Scissors beats paper")
+        displayResults.textContent = "You Lose! Scissors beats paper";
     } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-        console.log("It's a tie!")
+        displayResults.textContent = "It's a tie!";
     }
 
     if (playerSelection == 'scissors' && computerSelection == 'paper') {
         playerScore++;
-        console.log("You win! Scisssors beats paper")
+        displayResults.textContent = "You win! Scisssors beats paper";
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         computerScore++;
-        console.log("you Lose! Rock beats scissors")
+        displayResults.textContent = "You Lose! Rock beats scissors";
     } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-        console.log("It's a tie!")
+        displayResults.textContent = "It's a tie!";
     }
 }
 
