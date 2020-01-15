@@ -9,8 +9,10 @@ displayPlayerScore.textContent = "Player Score: " + playerScore;
 const displayComputerScore = document.querySelector('#displayComputerScore');
 displayComputerScore.textContent = "CPU Score: " + computerScore;
 
+const replayCard = document.querySelector('#replayCard');
+
 const gameEnd = document.querySelector('#gameEnd');
-content.appendChild(gameEnd);
+replayCard.appendChild(gameEnd);
 
 const replayBtn = document.createElement('button');
 replayBtn.classList.add('replayBtn')
@@ -27,14 +29,14 @@ function overallWinner() {
         playerScore = 0;
         computerScore = 0;
         gameEnd.textContent = "You Win!";
-        content.appendChild(replayBtn);
+        replayCard.appendChild(replayBtn);
         content.classList.add('content');
     
     } else if (computerScore = 5) {
         playerScore = 0;
         computerScore = 0;
         gameEnd.textContent = "CPU Wins. Too bad.";
-        content.appendChild(replayBtn);
+        replayCard.appendChild(replayBtn);
         content.classList.add('content');
     }
 }
