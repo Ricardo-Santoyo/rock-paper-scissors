@@ -1,18 +1,41 @@
 let playerScore = 0;
 let computerScore = 0;
-function gameEnd() {
-    if (playerScore > computerScore) {
+
+const displayResults = document.querySelector('#displayResults');
+
+const displayPlayerScore = document.querySelector('#displayPlayerScore');
+displayPlayerScore.textContent = "Player Score: " + playerScore;
+
+const displayComputerScore = document.querySelector('#displayComputerScore');
+displayComputerScore.textContent = "CPU Score: " + computerScore;
+
+const gameEnd = document.querySelector('#gameEnd');
+content.appendChild(gameEnd);
+
+const replayBtn = document.createElement('button');
+replayBtn.classList.add('replayBtn')
+replayBtn.textContent = "Play again?";
+replayBtn.addEventListener('click', () => {
+    window.location.reload();
+});
+
+function overallWinner() {
+    if (playerScore < 5 && computerScore < 5) {
+        gameEnd.textContent = "";
+    
+    } else if (playerScore == 5) {
         playerScore = 0;
         computerScore = 0;
-        console.log("You Win!");
-    } else if (playerScore < computerScore) {
+        gameEnd.textContent = "You Win!";
+        content.appendChild(replayBtn);
+        content.classList.add('content');
+    
+    } else if (computerScore = 5) {
         playerScore = 0;
         computerScore = 0;
-        console.log("CPU Wins. Too bad.");
-    } else if (playerScore == computerScore) {
-        playerScore = 0;
-        computerScore = 0;
-        console.log("Draw");
+        gameEnd.textContent = "CPU Wins. Too bad.";
+        content.appendChild(replayBtn);
+        content.classList.add('content');
     }
 }
 
@@ -26,14 +49,6 @@ function computerPlay() {
         return 'scissors';
     }
 }
-
-const displayResults = document.querySelector('#displayResults');
-
-const displayPlayerScore = document.querySelector('#displayPlayerScore');
-displayPlayerScore.textContent = "Player Score: " + playerScore;
-
-const displayComputerScore = document.querySelector('#displayComputerScore');
-displayComputerScore.textContent = "CPU Score: " + computerScore;
 
 function playRound (playerSelection,computerSelection) {
     computerSelection = computerPlay();
@@ -91,6 +106,7 @@ function playRound (playerSelection,computerSelection) {
         displayPlayerScore.textContent = "Player Score: " + playerScore;
         displayComputerScore.textContent = "CPU Score: " + computerScore;
     }
+    overallWinner();
 }
 
 const rock = document.querySelector('#rock');
@@ -107,7 +123,3 @@ const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     playRound('scissors');
 });
-
-function newFunction() {
-    displayPlayerScore.textContent = "Player Score: " + playerScore;
-}

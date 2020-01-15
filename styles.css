@@ -13,20 +13,46 @@ body {
 
 #rock {
     width: 250px;
+    margin-right: 20px;
+}
+
+#rock:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: box-shadow 0.5s;
+    box-shadow: 0px 10px 10px 6px rgb(144, 144, 145);
 }
 
 #scissors {
     width: 250px;
+    margin-left: 20px;
+}
+
+#scissors:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: box-shadow 0.5s;
+    box-shadow: 0px 10px 10px 6px rgb(144, 144, 145);
 }
 
 #paper {
     width: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#paper:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: box-shadow 0.5s;
+    box-shadow: 0px 10px 10px 6px rgb(144, 144, 145);
 }
 
 #displayResults {
     transition: all 2s ease;
     font-size: 2em;
     font-weight: bold;
+    margin-top: 50px;
 }
 
 #displayPlayerScore {
@@ -47,4 +73,24 @@ body {
     right: 0;
     margin-top: 20px;
     margin-right: 30px;
+}
+
+.content {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#gameEnd {
+    padding: 30px 50px;
+}
+
+.replayBtn {
+    color: white;
+    background-color: rgb(29, 161, 242);
+    border: 2px solid rgb(29, 161, 242);
+    border-radius: 5px;
+    padding: 12px 10px;
 }
